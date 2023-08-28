@@ -1,0 +1,89 @@
+
+@media only screen and (min-width:700px) and (max-width:1290px) and (orientation: landscape) {
+	
+	.head {
+  width: 98%;
+}
+	
+	.navBar
+	{
+		height: 115px;
+		width: 100%;
+	}
+	
+	.content {
+   width: 98.5%;
+}
+	
+.cart-Item 
+	{
+height: 225px;
+width: 40%;
+margin: 30px;
+	}
+	
+	.pos_1 
+	{
+	bottom: 245px;
+	}
+	
+}
+
+@media only screen and (max-width:555px) and (orientation: portrait) {
+	
+	.head {
+  display: inline-block;
+ width: 100%;;
+}
+	.left-block {
+		flex-direction: column;
+		
+	}
+	
+	.navItems{
+		
+  margin: 12px 14px;
+  width: 80%;
+	padding: 4px 0px 0px 27px;
+	}
+	
+	.navBar
+	{
+color: white;
+height: 205px;
+flex-direction: column;
+align-items: center;
+width: 100%;
+	}
+	
+	.logo {
+  height: 75px;
+  position: static;
+}
+	.content{
+		width: 100%;
+		padding: 31px 0px;
+	}
+	
+	.cart-Item 
+	{
+height: 225px;
+width: 78%;
+margin: 21px 35px;
+	}
+	
+	.pos_1 
+	{
+	bottom: 245px;
+	}
+	
+	
+	.shop-Item img {
+  height: 305px;
+  width: 70%;
+}
+
+.myInput {
+  width: 65%;
+	}
+}
