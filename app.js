@@ -2,23 +2,64 @@ const express = require("express");
 const fs = require("fs");
 const http = require("http");
 const app = express();
-const port = 80;
 const path = require("path");
 
-const mongoose = require('mongoose');
+const dotenv = require("dotenv");
+
+dotenv.config({ path: './config.env' });
+
+const DB = process.env.DATABASE;
+const PORT = process.env.port;
+
+// const { MongoClient } = require('mongodb');
+ // const DB = 'mongodb+srv://adminEcom:admindb123@cluster0.z0slj6o.mongodb.net/Shoppingkart?retryWrites=true&w=majority'
+
+/*
+MongoClient.connect(mongoUri, (err, client)=>{
+	if(err){
+		throw err;
+}
+	console.log('connected to DataBase...');
+})
+*/
+	const mongoose = require('mongoose');
 const bodyparser = require("body-parser");
-mongoose.connect('mongodb://localhost/Shoppingkart', {useNewUrlParser: true, useUnifiedTopology: true});
+// mongoose.connect('mongodb://localhost/Shoppingkart', {useNewUrlParser: true, useUnifiedTopology: true});
 
 let data = {};
 
+mongoose.connect(DB, {
+	 useNewUrlParser: true,
+	// useCreateIndex: true,
+	// useUnifiedTopology: true,
+	// useFindAndModify: false
+	 });
 
 let db = mongoose.connection;
+
 db.on('error', console.error.bind(console, 'connection error: '));
 db.once('open', function(){
 	console.log("we are connected..")
-});	
+})
+/*
+db.then(()=>{
+	console.log("connection is successfull to database with mongoose");
+}).catch((err) => {
+	console.log("no connection");
+});*/
 
-var OrderSchema = new mongoose.Schema({
+
+//let db = MongoClient.connection;
+// let db = MongoClient.connect;
+
+//db.on('error', console.error.bind(console, 'connection error: '));
+/*db.once('open', function(){
+	console.log("we are connected..")
+});	
+*/
+ var OrderSchema = new mongoose.Schema({
+	 
+// var OrderSchema = new MongoClient({
 	name: String,
 	quantity: String,
 	CityName: String,
@@ -27,8 +68,7 @@ var OrderSchema = new mongoose.Schema({
 	
 }) ;
 
-var Order = mongoose.model("order",OrderSchema);
-
+var Order = mongoose.model("orderSales",OrderSchema);
 
 app.use('/static', express.static('static'));
 
@@ -37,7 +77,6 @@ app.use(express.static('img'));
 
 app.set('view engine', 'pug');
 app.use(express.urlencoded())
-
 app.set('views', path.join(__dirname, 'views'));
 
 //___________________________________________________________
@@ -53,33 +92,23 @@ app.get('/contact', (req,res)=>{
 	res.render("contact.pug");
 })
 
-app.get('/cart', (req,res)=>{
-	res.render("cart.pug");	
-})
-
-app.get('/serverPage', (req,res)=>{
-	res.render("serverPage.pug");	
-})
 
 //__________________________________________________
 // SHOP PAGES FOR ORDERING ITEMS
+
 app.get('/shopPage', (req,res)=>{
-	
 	res.render("shopPage.pug");	
 })
 
 app.get('/shopPage-2', (req,res)=>{
-	
 	res.render("shopPage-2.pug");	
 })
 
 app.get('/shopPage-3', (req,res)=>{
-	
 	res.render("shopPage-3.pug");	
 })
 
 app.get('/shopPage-4', (req,res)=>{
-	
 	res.render("shopPage-4.pug");	
 })
 
@@ -93,58 +122,23 @@ app.get('/shopPage-6', (req,res)=>{
 	res.render("shopPage-6.pug");	
 })
 
-app.get('/DataBase', (req,res)=>{
-	
-	res.render("DataBase.pug");	
-})
-
-/*
- if(data.length){
-			   
-	for(var i=0; i=data.length; i++)
-	{
-			
-		(i+1) 
-		data[i].quantity 
-		data[i].CityName 
-		data[i].address 
-		data[i].PhoneNumber 
-	}
-			   
-				}
-		else{
-			No Orders
-			}
-*/
-
 //__________________________________________________
 // Post REQUESTS
 app.post('/shopPage', (req,res)=>{
 	
-	var OrderData = new Order(req.body);
-	
+	var OrderData = new Order(req.body);	
 	OrderData.save().then(()=>{
+
 		res.send('Your order has successfully submitted');
-	
-	//	res.render("shopCounterPage.pug");	
-		
+
 	}).catch(()=>{
 		res.status(400).send("This item has not been save in database.");
 	})
-
 });
 
 //____________________________________________________________
 app.get('/shopCounterPage', (req,res)=>{
-/*
-	//res.render("shopPage-6.pug");	
-	
-			quantity
-			cityName
-			address
-			phoneNumber
-			Name	
-	*/		
+
 	Order.find().then((result)=>{
 	// storing database data into object to render it
 	// on webpage as a list of orders made
@@ -160,21 +154,23 @@ class ObjectId{
 	let dataBase = [${result}]; 
 `;
 
+console.log(result);
 	let i = 3;
 	let j = 1;
 	let divs = `5`*i;
 	
-	var params = {'id2': data[j].quantity, 'id': data[i].quantity, "title":'My Shop ShopCounter', "objects":data.length, "divs":divs, "content": data[i], "quantity": data[i].quantity, "cityName": data[i].CityName, "address": data[i].address, "phoneNumber": data[i].PhoneNumber}; //result}
+	var params = {"title":'My Shop ShopCounter', "objects":data.length, "divs":divs, "content": data[i], }; //result}
 
-		res.render( "shopCounterPage.pug",params);
 		fs.writeFileSync('./static/DataBasePage.js', dataf);
-
-	}).catch((err)=>{
-		console.log(`No result shown.error`);
+	 	res.render( "shopCounterPage.pug",params);
+		
+}).catch((err)=>{
+	console.log(`No result shown.error`);
+	console.log(err);
 	})
 })
 
 //_________________________________________________
-app.listen(port,()=>{
-	console.log(`app started successfully at port ${port}`);
+app.listen(PORT,()=>{
+	console.log(`app started successfully at port ${PORT}`);
 })
