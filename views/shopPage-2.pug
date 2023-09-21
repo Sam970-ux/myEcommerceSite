@@ -1,0 +1,65 @@
+<html>
+	<head>
+		<title>  Buykaro.com </title>
+		style
+			include ../static/style.css
+			include ../static/utils.css
+			include ../static/responsive.css
+			
+	</head>
+  
+<body>
+	<header class="head">
+		<nav class="navBar flex">
+			<ul class="flex ">
+				<li><img src="../static/logo.png" class="logo"></li>
+			</ul>		
+			<div class="left-block flex">
+				
+				
+				<ul class="flex navItems">
+					<li><a href="/">Home</a></li>
+					<li><a href="/about"> About </a></li>
+					<li><a href="/contact">Contact</a></li>
+					<li><a href="/shopCounterPage"> Cart </a></li>
+					<li><a href='/shopCounterPage'> Counter </a></li>
+				
+				</ul>
+			</div>
+		  
+		</nav>	
+		
+		
+	</header>
+	
+	<div class="content">
+		
+		<div class="shop-Item flex" id="2">
+			<img src="" id="2">
+			
+			<div class="shop_item_info">
+				<div class="NameItem" id="2"></div>
+				<div class="priceItem" id="2"></div>
+			</div>	
+		</div>
+		
+		<div class="FormPart">
+		<form action="/shopPage" method="post" class="buyForm flex" id="2">
+			<h2> Make an Order </h2>
+			<div class="formNameItem" id="1" name="name"></div>
+			<input type="text" name="quantity" class="myInput" placeholder="Enter Quantity">
+			<input type="text" name="CityName" class="myInput" placeholder="Enter Town/City">
+			<input type="text" name="address" class="myInput" placeholder="Enter address">
+			<input type="text" name="PhoneNumber" class="myInput" placeholder="Enter Phone-Number">
+			<button class="btn">Order</button>
+			
+		</form>
+		</div>
+		
+	</div>
+	
+
+	script
+		include ../static/script.js
+</body>
+</html>
