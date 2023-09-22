@@ -70,14 +70,14 @@ db.then(()=>{
 
 var Order = mongoose.model("orderSales",OrderSchema);
 
-app.use('/static', express.static('static'));
+app.use(express.static('static'));
 
 //using img directory that has images to access them.
 app.use(express.static('img'));
 
 app.set('view engine', 'pug');
 app.use(express.urlencoded())
-app.set('views', path.join(__dirname, 'views'));
+app.set(path.join(__dirname, 'views'));
 
 //___________________________________________________________
 // EXPRESS GET REQUESTS for loading pages.
