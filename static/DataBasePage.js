@@ -34,4 +34,11 @@ class ObjectId{
   address: 'win society',
   PhoneNumber: '2211221133',
   __v: 0
+},{
+  _id: new ObjectId("650d8437058e5e190367fc71"),
+  quantity: '4',
+  CityName: 'nizamabad',
+  address: 'postoffic road',
+  PhoneNumber: '1002003004',
+  __v: 0
 }]; 

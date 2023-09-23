@@ -8,6 +8,11 @@ position: sticky;
 	height: 115px;
 }
 
+.navbar ul li{
+	list-style:none;
+	text-decoration:none;
+}
+
 .left-block{
 /*width: 98%;  */
 width: 70%;

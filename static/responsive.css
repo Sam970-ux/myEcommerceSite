@@ -87,3 +87,122 @@ margin: 21px 35px;
   width: 65%;
 	}
 }
+
+
+
+@media only screen and (min-width:700px) and (max-width:1290px) and (orientation: landscape) {
+	
+	.head {
+  width: 98%;
+}
+	
+	.navBar
+	{
+		height: 115px;
+		width: 100%;
+	}
+	
+	.content {
+   width: 98.5%;
+}
+	
+.cart-Item 
+	{
+height: 225px;
+width: 40%;
+margin: 30px;
+	}
+	
+	.pos_1 
+	{
+	bottom: 245px;
+	}
+	
+}
+
+@media only screen and (min-width:555px) and (max-width:890px) and (orientation: portrait) {
+	
+.cart-Item {
+ width: 44%;
+  margin: 2%;
+}
+
+}
+
+
+
+@media only screen and (max-width:360px) and (orientation: portrait) {
+
+.navbar {
+height: 265px;
+align-items: center;
+justify-content: center;
+}
+	
+.navBar ul{
+ margin-right: 33px;
+}	
+
+.left-block {
+  align-items: center;
+}	
+	
+	.logo {
+  height: 55px;
+}
+	
+.cart-Item {
+  height: 132px;
+  margin: 30px auto;
+  width: 95%;
+}
+
+.pos_1 {
+  position: static;
+}
+
+.DataBox {
+  width: 85%;
+  text-align: center;
+  height: 35px;
+}
+
+.left-block ul {
+  font-size: 18px;
+  flex-direction: column;
+}
+
+.left-block ul li {
+  padding: 2px 0px;
+}
+
+
+/* shop page css */
+.shop-Item {
+  height: 335px;
+}
+
+.shop-Item img {
+  height: 180px;
+  width: 85%;
+}
+
+.Items_display_part {
+  width: 94%;
+  border-radius: 0px;
+}
+
+.Items_box_Number {
+  padding: 3px;
+  width: 96%;
+   border-radius: 0px;
+}
+
+.item_data {
+  margin: 0px;
+  border-radius: 0px;
+}
+
+
+
+}
