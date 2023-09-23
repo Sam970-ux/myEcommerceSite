@@ -123,8 +123,8 @@ margin: 30px;
 @media only screen and (min-width:555px) and (max-width:890px) and (orientation: portrait) {
 	
 .cart-Item {
- width: 44%;
-  margin: 2%;
+  width: 40%;
+  margin: 3%;
 }
 
 }
@@ -152,7 +152,7 @@ justify-content: center;
 }
 	
 .cart-Item {
-  height: 132px;
+  height: 250px;
   margin: 30px auto;
   width: 95%;
 }
@@ -189,20 +189,12 @@ justify-content: center;
 
 .Items_display_part {
   width: 94%;
-  border-radius: 0px;
-}
-
-.Items_box_Number {
-  padding: 3px;
-  width: 96%;
-   border-radius: 0px;
-}
-
-.item_data {
-  margin: 0px;
-  border-radius: 0px;
 }
 
 
+.content {
+  width: 100%;
+  padding: 33px 5%;
+}
 
 }
