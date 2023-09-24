@@ -41,4 +41,11 @@ class ObjectId{
   address: 'postoffic road',
   PhoneNumber: '1002003004',
   __v: 0
+},{
+  _id: new ObjectId("650f1cbf1f95c4605aa3ee08"),
+  quantity: '14',
+  CityName: 'Tolichoki',
+  address: '346/98/12',
+  PhoneNumber: '2233445566',
+  __v: 0
 }]; 
