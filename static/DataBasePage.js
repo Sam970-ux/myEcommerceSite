@@ -48,4 +48,46 @@ class ObjectId{
   address: '346/98/12',
   PhoneNumber: '2233445566',
   __v: 0
+},{
+  _id: new ObjectId("65101bd3d8c2c2b23e8d0263"),
+  quantity: '4',
+  CityName: 'JJR nagar',
+  address: 'Post office road',
+  PhoneNumber: '1111122222',
+  __v: 0
+},{
+  _id: new ObjectId("651040c8194168a0be8c143d"),
+  quantity: '2',
+  CityName: 'karimabad',
+  address: 'railway road',
+  PhoneNumber: '5555566666',
+  __v: 0
+},{
+  _id: new ObjectId("651041cbb1a6a57a268b2c28"),
+  quantity: '7',
+  CityName: 'fgfgfg',
+  address: 'rt7.9.8',
+  PhoneNumber: '222333444',
+  __v: 0
+},{
+  _id: new ObjectId("6510427db1a6a57a268b2c2c"),
+  quantity: '9',
+  CityName: 'Hightown',
+  address: 'Crimson Street ',
+  PhoneNumber: '1111122222',
+  __v: 0
+},{
+  _id: new ObjectId("651069123cb25591c19516cf"),
+  quantity: '4',
+  CityName: 'Tyuj',
+  address: 'Minku',
+  PhoneNumber: '3333333333',
+  __v: 0
+},{
+  _id: new ObjectId("65107583e62c8322efdf48a2"),
+  quantity: '78',
+  CityName: 'hjhjkk',
+  address: 'yyuuhh',
+  PhoneNumber: '5656565656',
+  __v: 0
 }]; 

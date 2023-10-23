@@ -27,6 +27,7 @@ cartItem.forEach((element,i)=>{
 // click event for cart-items when stck-card is
 // clicked its color changes and the image of its
 // item shows-up on banner card.
+
 	element.addEventListener('click', (t)=>{
 
 itemIndex = parseInt(t.target.id);
